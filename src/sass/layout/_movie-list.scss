@@ -1,0 +1,106 @@
+.films {
+  padding: 20px 0 40px;
+}
+.films-list {
+  &__item {
+    width: 280px;
+    transition: transform 250ms linear;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.05);
+    }
+  }
+  &__img-box {
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    width: 100%;
+    height: 402px;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
+  &__content {
+    margin-top: 10px;
+  }
+  &__title {
+    font-weight: 500;
+    @include font(12px, 14px);
+    color: $movie-title-color;
+    text-transform: uppercase;
+  }
+  &__genre {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    @include font(12px, 14px);
+    color: $accent-color;
+  }
+  &__rating {
+    font-weight: 500;
+    @include font(12px, 14px);
+    color: $movie-rating-color;
+    background-color: $accent-color;
+    text-align: center;
+    width: 36px;
+    height: 16px;
+    border-radius: 5px;
+    padding: 1px 6px;
+    margin-left: 10px;
+  }
+}
+//////////////////////////////////////////////////////////////////////////////////// TABLET ///////
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .films-list {
+    &__item {
+      &:not(:nth-child(-n + 2)) {
+        margin-top: 30px;
+      }
+      &:nth-child(odd) {
+        margin-right: 30px;
+      }
+    }
+  }
+}
+//////////////////////////////////////////////////////////////////////////////////// MOBILE ///////
+@media screen and (max-width: 767px) {
+  .films-list {
+    &__item:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+}
+//////////////////////////////////////////////////////////////////////////////////// TABLET ///////
+@media screen and (min-width: 768px) {
+  .films {
+    padding: 60px 0 50px;
+  }
+  .films-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+      width: 294px;
+    }
+    &__img-box {
+      height: 398px;
+    }
+  }
+}
+//////////////////////////////////////////////////////////////////////////////////// DESKTOP ///////
+@media screen and (min-width: 1024px) {
+  .films-list {
+    &__item {
+      width: 274px;
+
+      &:not(:nth-child(-n + 3)) {
+        margin-top: 30px;
+      }
+      &:not(:nth-child(3n)) {
+        margin-right: 30px;
+      }
+    }
+  }
+}

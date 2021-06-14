@@ -1,0 +1,39 @@
+%button {
+  font-weight: 500;
+  @include font(12px, 16px);
+  width: 130px;
+  height: 44px;
+  color: $header-text-color;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+  &.is-active {
+    background-color: $accent-color;
+    box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
+    border: none;
+  }
+}
+.library-button {
+  @extend %button;
+}
+.library-button__wrapper {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 46px;
+}
+
+@media screen and (min-width: 768px) {
+  .library-button {
+    width: 136px;
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+}

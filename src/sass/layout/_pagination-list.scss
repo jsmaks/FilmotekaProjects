@@ -1,0 +1,56 @@
+.tui-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.tui-page-btn {
+  height: 40px;
+  width: 40px;
+  padding: 12px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: 500;
+  @include font(12px, 16px);
+  color: $movie-title-color;
+}
+
+.tui-next-is-ellip,
+.tui-prev-is-ellip {
+  padding: 9px 15px;
+}
+
+.tui-next,
+.tui-prev {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tui-prev {
+  background-image: url('../images/arrow-left.svg');
+}
+
+.tui-next {
+  background-image: url('../images/arrow-right.svg');
+}
+
+.tui-is-selected {
+  background-color: $accent-color;
+  color: $movie-rating-color;
+}
+
+@media screen and (max-width: 767px) {
+
+  .tui-prev-is-ellip,
+  .tui-next-is-ellip {
+    display: none;
+  }
+}
+
+.tui-last,
+.tui-first {
+  display: none;
+}

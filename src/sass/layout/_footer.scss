@@ -1,0 +1,41 @@
+.footer {
+  background-color: $footer-bg-color;
+
+  &__icon-favorite {
+    display: inline-block;
+    width: 14px;
+    height: 12.75px;
+    fill: $accent-color;
+    color: $footer-text-color;
+  }
+  &__rights,
+  &__link {
+    color: $footer-text-color;
+  }
+}
+@media screen and (min-width: 320px) {
+  .footer {
+    height: 100px;
+    &__wrapper {
+      padding-top: 28px;
+      text-align: center;
+    }
+    &__rights {
+      margin-bottom: 10px;
+      @include font(14px, 16px);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    height: 77px;
+    &__wrapper {
+      display: flex;
+      justify-content: center;
+    }
+    &__rights {
+      @include font(16px, 19px);
+    }
+  }
+}

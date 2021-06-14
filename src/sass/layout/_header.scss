@@ -1,0 +1,212 @@
+.header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url('../images/header/header-bg-mobile.jpg');
+  // background-size: 320px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 46px 0 97px;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.header.library {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url('../images/library/library-bg-mobile.jpg');
+  padding: 46px 0 65px;
+}
+.logo {
+  &__icon {
+    width: 24px;
+    height: 24px;
+    stroke: $logo-color;
+  }
+  &__text {
+    display: none;
+  }
+}
+.navigation {
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__item:nth-child(2) {
+    margin-left: 40px;
+  }
+  &__item.active {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: $accent-color;
+    }
+  }
+  &__link {
+    font-weight: 500;
+    @include font(12px, 14px);
+    text-transform: uppercase;
+    color: $header-text-color;
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+  }
+}
+.input {
+  width: 280px;
+  height: 20px;
+  font-weight: 400;
+  @include font(14px, 16px);
+  color: $header-text-color;
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.5px solid $header-text-color;
+  padding: 0 15px 4px 1px;
+  outline: none;
+
+  &:focus {
+    border-bottom: 0.5px solid $accent-color;
+  }
+  &::placeholder {
+    font-weight: 400;
+    @include font(14px, 16px);
+    color: $header-text-color;
+  }
+  &__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 38px;
+
+    &.tab-inactive {
+      display: none;
+    }
+  }
+  &__search-icon {
+    position: absolute;
+    content: '';
+    bottom: 6px;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    stroke: $header-text-color;
+  }
+  &__error {
+    position: absolute;
+    content: '';
+    top: (20px+22px);
+    // высота инпута плюс расстояние до ошибки по макету
+    left: 0;
+    font-weight: 400;
+    @include font(14px, 16px);
+    color: $error-color;
+  }
+}
+@media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
+  screen and (min-resolution: 192dpi) and (max-width: 767px),
+  screen and (min-resolution: 2dppx) and (max-width: 767px) {
+  .header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header/header-bg-mobile@2x.jpg');
+  }
+  .header.library {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/library/library-bg-mobile@2x.jpg');
+  }
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+@media screen and (min-width: 768px) {
+  .header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header/header-bg-tablet.jpg');
+    // background-size: 768px;
+    padding: 41px 0 97px;
+  }
+  .header.library {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/library/library-bg-tablet.jpg');
+    padding: 41px 0 65px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__text {
+      display: block;
+      font-weight: 500;
+      @include font(30px, 35px);
+      color: $header-text-color;
+      margin-left: 10px;
+    }
+  }
+  .input {
+    width: 336px;
+
+    &__search-icon {
+      right: (217px-75px);
+      //расстояние от иконки до конца страницы макета минус отступ контейнера
+    }
+    &__error {
+      left: (188px-75px);
+      //расстояние от начала макета до текста минус отступ контейнера
+    }
+  }
+}
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
+  screen and (min-resolution: 192dpi) and (min-width: 768px),
+  screen and (min-resolution: 2dppx) and (min-width: 768px) {
+  .header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header/header-bg-tablet@2x.jpg');
+  }
+  .header.library {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/library/library-bg-tablet@2x.jpg');
+  }
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+@media screen and (min-width: 1024px) {
+  .header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header/header-bg-desktop.jpg');
+    // background-size: 1024px;
+  }
+  .header.library {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/library/library-bg-desktop.jpg');
+  }
+  .input {
+    &__search-icon {
+      right: (345px-71px);
+      //расстояние от иконки до конца страницы макета минус отступ контейнера
+    }
+    &__error {
+      left: (315px-71px);
+      //расстояние от начала макета до текста минус отступ контейнера
+    }
+  }
+}
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 1024px),
+  screen and (min-resolution: 192dpi) and (min-width: 1024px),
+  screen and (min-resolution: 2dppx) and (min-width: 1024px) {
+  .header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header/header-bg-desktop@2x.jpg');
+  }
+  .header.library {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/library/library-bg-desktop@2x.jpg');
+  }
+}

@@ -1,0 +1,21 @@
+// utils
+@import './utils/variables';
+@import './utils/mixins';
+@import './utils/hidden';
+// base
+@import './base/base';
+@import './base/container';
+// components
+@import './components/button';
+@import './components/modal';
+@import './components/spinner';
+@import './components/tabs';
+@import './components/modal-team';
+@import './components/auth';
+
+// layout
+@import './layout/header';
+@import './layout/movie-list';
+@import './layout/pagination-list';
+
+@import './layout/footer';
